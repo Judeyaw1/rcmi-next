@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "@/components/MobileNav";
 import { cores } from "@/lib/content";
 
 const navLinks = [
@@ -74,12 +75,15 @@ export default function Header() {
           </ul>
         </nav>
 
-        <Link
-          href="/contact"
-          className="rounded-sm bg-crimson px-5 py-2.5 text-[12px] font-semibold uppercase tracking-wider text-white transition-colors hover:bg-crimson-deep"
-        >
-          Contact Us
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/contact"
+            className="rounded-sm bg-crimson px-4 py-2.5 text-[11.5px] font-semibold uppercase tracking-wider text-white transition-colors hover:bg-crimson-deep sm:px-5 sm:text-[12px]"
+          >
+            Contact Us
+          </Link>
+          <MobileNav />
+        </div>
       </div>
     </header>
   );
