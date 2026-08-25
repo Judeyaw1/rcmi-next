@@ -33,7 +33,7 @@ export default function HeroCarousel({ images }: { images: string[] }) {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, rgba(4,7,20,0.92) 0%, rgba(4,7,20,0.56) 48%, rgba(4,7,20,0.1) 76%), linear-gradient(0deg, rgba(4,7,20,0.68) 0%, rgba(4,7,20,0) 42%)",
+            "linear-gradient(90deg, rgba(4,7,20,0.88) 0%, rgba(4,7,20,0.42) 30%, rgba(4,7,20,0) 52%), linear-gradient(0deg, rgba(4,7,20,0.5) 0%, rgba(4,7,20,0) 28%)",
         }}
       />
 

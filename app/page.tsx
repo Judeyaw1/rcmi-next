@@ -18,7 +18,7 @@ export default function Home() {
             "/images/Howard-Hero-Slideshow-02.jpg.webp",
           ]}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,7,20,0.94)0%,rgba(4,7,20,0.76)42%,rgba(4,7,20,0.2)72%,rgba(4,7,20,0)100%),linear-gradient(180deg,rgba(4,7,20,0.5)0%,rgba(4,7,20,0.08)44%,rgba(4,7,20,0.3)100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,7,20,0.5)0%,rgba(4,7,20,0.38)42%,rgba(4,7,20,0.1)72%,rgba(4,7,20,0)100%),linear-gradient(180deg,rgba(4,7,20,0.25)0%,rgba(4,7,20,0.04)44%,rgba(4,7,20,0.15)100%)]" />
         <div className="relative z-2 mx-auto flex w-full max-w-340 items-end px-6 pb-18 pt-28 text-white md:px-10">
           <div className="max-w-205 border-l border-white/12 pl-5 md:pl-7">
             <Reveal>
