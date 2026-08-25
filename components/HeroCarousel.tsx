@@ -33,7 +33,7 @@ export default function HeroCarousel({ images }: { images: string[] }) {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, rgba(10,14,40,0.82) 0%, rgba(10,14,40,0.42) 48%, rgba(10,14,40,0.05) 75%), linear-gradient(0deg, rgba(10,14,40,0.55) 0%, rgba(10,14,40,0) 40%)",
+            "linear-gradient(90deg, rgba(4,7,20,0.92) 0%, rgba(4,7,20,0.56) 48%, rgba(4,7,20,0.1) 76%), linear-gradient(0deg, rgba(4,7,20,0.68) 0%, rgba(4,7,20,0) 42%)",
         }}
       />
 
@@ -53,7 +53,7 @@ export default function HeroCarousel({ images }: { images: string[] }) {
           type="button"
           aria-label="Previous"
           onClick={() => go(-1)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/50 bg-white/[0.06] text-lg text-white transition-colors hover:bg-white/20"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/18 bg-black/20 text-lg text-white/92 backdrop-blur-sm transition-colors hover:bg-white/10"
         >
           ‹
         </button>
@@ -61,7 +61,7 @@ export default function HeroCarousel({ images }: { images: string[] }) {
           type="button"
           aria-label="Next"
           onClick={() => go(1)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/50 bg-white/[0.06] text-lg text-white transition-colors hover:bg-white/20"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/18 bg-black/20 text-lg text-white/92 backdrop-blur-sm transition-colors hover:bg-white/10"
         >
           ›
         </button>

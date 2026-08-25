@@ -10,7 +10,7 @@ import { cores, news, impactStats, goals } from "@/lib/content";
 export default function Home() {
   return (
     <>
-      <section className="relative flex h-[88vh] min-h-140 items-end overflow-hidden">
+      <section className="relative flex h-[88vh] min-h-140 items-end overflow-hidden bg-[#050816]">
         <HeroCarousel
           images={[
             "/images/IMG_8682.jpeg.webp",
@@ -18,45 +18,52 @@ export default function Home() {
             "/images/Howard-Hero-Slideshow-02.jpg.webp",
           ]}
         />
-        <div className="relative z-2 mx-auto w-full max-w-340 px-6 pb-18 text-white md:px-10">
-          <Reveal>
-            <div className="mb-4.5 flex items-center gap-2.5 font-mono text-[10.5px] uppercase tracking-[0.16em] text-[#F0B7C0] before:inline-block before:h-px before:w-5 before:bg-[#F0B7C0] before:content-['']">
-              Howard University · RCMI Program
-            </div>
-          </Reveal>
-          <h1 className="max-w-[16ch] font-fraunces text-[clamp(30px,4.4vw,58px)] font-semibold leading-[1.08] text-white">
-            <Reveal as="span" delay={100} className="block">
-              Advancing health
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,7,20,0.94)0%,rgba(4,7,20,0.76)42%,rgba(4,7,20,0.2)72%,rgba(4,7,20,0)100%),linear-gradient(180deg,rgba(4,7,20,0.5)0%,rgba(4,7,20,0.08)44%,rgba(4,7,20,0.3)100%)]" />
+        <div className="relative z-2 mx-auto flex w-full max-w-340 items-end px-6 pb-18 pt-28 text-white md:px-10">
+          <div className="max-w-205 border-l border-white/12 pl-5 md:pl-7">
+            <Reveal>
+              <div className="mb-5 flex items-center gap-2.5 font-mono text-[10.5px] uppercase tracking-[0.18em] text-[#F0B7C0]">
+                <span className="inline-block h-8 w-1 bg-crimson" />
+                Howard University · RCMI Program
+              </div>
             </Reveal>
-            <Reveal as="span" delay={220} className="block">
-              equity through <em className="text-crimson not-italic">rigorous</em>
+            <h1 className="max-w-[15ch] font-fraunces text-[clamp(36px,5vw,68px)] font-semibold leading-[0.97] tracking-[-0.02em] text-white">
+              <Reveal as="span" delay={100} className="block">
+                Advancing health equity
+              </Reveal>
+              <Reveal as="span" delay={240} className="block">
+                through <em className="text-crimson not-italic">rigorous</em>
+              </Reveal>
+              <Reveal as="span" delay={380} className="block">
+                research infrastructure.
+              </Reveal>
+            </h1>
+            <Reveal delay={500}>
+              <div className="mt-6 h-px w-22 bg-crimson" />
             </Reveal>
-            <Reveal as="span" delay={340} className="block">
-              research infrastructure.
+            <Reveal delay={560}>
+              <p className="mt-6 max-w-[44ch] text-[14.5px] leading-relaxed text-white/80 md:text-[15.5px]">
+                We build the cores, train the investigators, and fund the pilot science that moves
+                minority health and health-disparities research forward from bench to community.
+              </p>
             </Reveal>
-          </h1>
-          <Reveal delay={480}>
-            <p className="mt-4.5 max-w-[42ch] text-[14.5px] leading-relaxed text-white/82">
-              We build the cores, train the investigators, and fund the pilot science that moves
-              minority health and health-disparities research forward — from bench to community.
-            </p>
-          </Reveal>
-          <Reveal delay={580}>
-            <div className="mt-8.5 flex flex-wrap gap-3.5">
-              <Link
-                href="/cores"
-                className="inline-flex items-center gap-2.5 rounded-sm bg-crimson px-7 py-3.5 text-[13px] font-semibold uppercase tracking-wider text-white transition-transform hover:-translate-y-0.5 hover:bg-crimson-deep"
-              >
-                Explore Our Cores →
-              </Link>
-              <SmoothScrollLink
-                targetId="vision"
-                className="inline-flex items-center gap-2.5 rounded-sm border border-white/50 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/12"
-              >
-                Our Mission
-              </SmoothScrollLink>
-            </div>
-          </Reveal>
+            <Reveal delay={660}>
+              <div className="mt-9 flex flex-wrap gap-3.5">
+                <Link
+                  href="/cores"
+                  className="inline-flex items-center gap-2.5 rounded-sm bg-crimson px-7 py-3.5 text-[13px] font-semibold uppercase tracking-wider text-white transition-transform hover:-translate-y-0.5 hover:bg-crimson-deep"
+                >
+                  Explore Our Cores →
+                </Link>
+                <SmoothScrollLink
+                  targetId="vision"
+                  className="inline-flex items-center gap-2.5 rounded-sm border border-white/28 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
+                >
+                  Our Mission
+                </SmoothScrollLink>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
