@@ -35,9 +35,12 @@ const inputClass =
   "w-full border-0 border-b border-line bg-transparent px-0 py-3 text-[14.5px] text-ink outline-none transition-colors focus:border-crimson";
 const labelClass = "mb-1.5 block font-mono text-[10.5px] uppercase tracking-widest text-muted";
 
+const SENDING_MS = 700;
+
 export default function ContactForm() {
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: FormEvent) {
@@ -45,7 +48,11 @@ export default function ContactForm() {
     const nextErrors = validate(values);
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length === 0) {
-      setSubmitted(true);
+      setSubmitting(true);
+      setTimeout(() => {
+        setSubmitting(false);
+        setSubmitted(true);
+      }, SENDING_MS);
     }
   }
 
@@ -53,10 +60,39 @@ export default function ContactForm() {
     setValues((prev) => ({ ...prev, [field]: value }));
   }
 
+  if (submitting) {
+    return (
+      <div className="flex flex-col items-center gap-5 py-16 text-center">
+        <div className="heart-loader" />
+        <div className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">
+          Sending your message…
+        </div>
+      </div>
+    );
+  }
+
   if (submitted) {
     return (
-      <div className="flex flex-col items-center py-10 text-center">
-        <h3 className="font-fraunces text-[22px] font-semibold text-navy">Message received.</h3>
+      <div className="flex flex-col items-center py-10 text-center animate-success-pop">
+        <svg viewBox="0 0 52 52" className="h-16 w-16 text-crimson" aria-hidden>
+          <circle
+            cx="26"
+            cy="26"
+            r="24"
+            pathLength={100}
+            className="animate-check-circle fill-none stroke-current stroke-2"
+          />
+          <path
+            d="M14 27l7 7 16-16"
+            pathLength={100}
+            className="animate-check-mark fill-none stroke-current stroke-3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <h3 className="mt-5 font-fraunces text-[22px] font-semibold text-navy">
+          Message received.
+        </h3>
         <p className="mx-auto mt-3 max-w-[42ch] text-[14.5px] leading-relaxed text-muted">
           Thanks, {values.name.split(" ")[0]} — the RCMI Program office will get back to you
           shortly.

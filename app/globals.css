@@ -13,6 +13,9 @@
   --color-line-light: rgba(255, 255, 255, 0.16);
 
   --animate-scroll-x: scroll-x 22s linear infinite;
+  --animate-check-circle: check-circle 450ms ease-out both;
+  --animate-check-mark: check-mark 350ms 400ms ease-out both;
+  --animate-success-pop: success-pop 450ms ease-out both;
 }
 
 @theme inline {
@@ -27,6 +30,87 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+.heart-loader {
+  width: 50px;
+  aspect-ratio: 1;
+  color: #c2102e;
+  background:
+    radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+    radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+    linear-gradient(to bottom left, currentColor 42%, #0000 43%) bottom left,
+    linear-gradient(to bottom right, currentColor 42%, #0000 43%) bottom right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  transform-origin: 50% 45%;
+  animation: heart-loader-beat 1.15s ease-in-out infinite;
+}
+
+.heart-loader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0.45;
+  transform-origin: 50% 45%;
+  animation: heart-loader-pulse 1.15s ease-out infinite;
+}
+
+@keyframes heart-loader-beat {
+  0%,
+  28%,
+  100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.16);
+  }
+  19% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes heart-loader-pulse {
+  0%,
+  20% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes check-circle {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes check-mark {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes success-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
