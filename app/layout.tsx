@@ -3,7 +3,6 @@ import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import RouteLoadingOverlay from "@/components/RouteLoadingOverlay";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -40,7 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="disable-scroll-restoration" strategy="beforeInteractive">
           {`if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }`}
         </Script>
-        <RouteLoadingOverlay />
         <Header />
         {children}
         <Footer />
