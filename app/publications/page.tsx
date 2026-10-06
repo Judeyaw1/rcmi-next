@@ -23,12 +23,11 @@ export default function PublicationsPage() {
           <div className="absolute top-1 bottom-1 left-1.75 w-px bg-line md:left-2.25" />
 
           <div className="flex flex-col gap-16">
-            {years.map((year, i) => (
+            {years.map((year) => (
               <PublicationYearGroup
                 key={year}
                 year={year}
                 items={publications.filter((p) => p.year === year)}
-                defaultOpen={i === 0}
               />
             ))}
           </div>
