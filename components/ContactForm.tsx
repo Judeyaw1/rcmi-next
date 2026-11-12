@@ -31,6 +31,8 @@ function validate(values: FormValues): FormErrors {
   return errors;
 }
 
+const additionalTopics = [{ id: "redcap", title: "RedCap", email: "RedCap@howard.edu" }];
+
 const inputClass =
   "w-full border-0 border-b border-line bg-transparent px-0 py-3 text-[14.5px] text-ink outline-none transition-colors focus:border-crimson";
 const labelClass = "mb-1.5 block font-mono text-[10.5px] uppercase tracking-widest text-muted";
@@ -154,6 +156,9 @@ export default function ContactForm() {
               <option>General Inquiry</option>
               {cores.map((c) => (
                 <option key={c.id}>{c.title}</option>
+              ))}
+              {additionalTopics.map((t) => (
+                <option key={t.id}>{t.title}</option>
               ))}
             </select>
             <span className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[10px] text-muted">

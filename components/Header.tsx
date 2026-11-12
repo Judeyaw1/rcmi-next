@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Publications", href: "/publications" },
   { label: "News", href: "/news" },
+  { label: "REDCap", href: "/redcap-request" },
 ];
 
 const navLinkClass =

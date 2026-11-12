@@ -59,6 +59,7 @@ export default function Footer() {
             { label: "Cores", href: "/cores" },
             { label: "Projects", href: "/projects" },
             { label: "Services", href: "/services" },
+            { label: "REDCap Request", href: "/redcap-request" },
             { label: "Publications", href: "/publications" },
           ]}
         />
